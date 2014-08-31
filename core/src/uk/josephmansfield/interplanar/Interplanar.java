@@ -3,6 +3,7 @@ package uk.josephmansfield.interplanar;
 import com.badlogic.ashley.core.Engine;
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Graphics;
 
 public class Interplanar extends ApplicationAdapter {
 
