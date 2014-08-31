@@ -35,6 +35,6 @@ public class DesktopLauncher {
             config.fullscreen = true;
         }
 
-		new LwjglApplication(new Interplanar(), config);
+		new LwjglApplication(new Interplanar(null), config);
 	}
 }

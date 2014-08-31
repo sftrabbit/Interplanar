@@ -3,18 +3,22 @@ package uk.josephmansfield.interplanar;
 import com.badlogic.ashley.core.Engine;
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Graphics;
+import com.badlogic.gdx.InputProcessor;
 
 public class Interplanar extends ApplicationAdapter {
 
     private Engine entityEngine = new Engine();
-    private InputHandler inputHandler = new InputHandler();
+    private InputProcessor inputProcessor = null;
     private Renderer renderer = null;
+
+    public Interplanar(InputProcessor inputProcessor) {
+        this.inputProcessor = inputProcessor;
+    }
 
 	@Override
 	public void create() {
         renderer = new PixelatedRenderer(new SceneRenderer());
-        Gdx.input.setInputProcessor(inputHandler);
+        Gdx.input.setInputProcessor(inputProcessor);
 	}
 
     @Override
