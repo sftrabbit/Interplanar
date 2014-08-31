@@ -4,6 +4,7 @@ import com.badlogic.ashley.core.Engine;
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.math.MathUtils;
 
 public class Interplanar extends ApplicationAdapter {
 
@@ -22,6 +23,8 @@ public class Interplanar extends ApplicationAdapter {
 
 	@Override
 	public void render() {
+        float deltaTime = Math.min(Gdx.graphics.getDeltaTime(), 1/60f);
+        entityEngine.update(deltaTime);
         renderer.render();
 	}
 
