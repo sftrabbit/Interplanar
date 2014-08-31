@@ -9,16 +9,18 @@ import com.badlogic.gdx.math.MathUtils;
 public class Interplanar extends ApplicationAdapter {
 
     private Engine entityEngine = new Engine();
-    private Renderer renderer = new Renderer();
     private InputHandler inputHandler = new InputHandler();
+    private Renderer renderer = null;
 
 	@Override
 	public void create() {
+        renderer = new Renderer();
         Gdx.input.setInputProcessor(inputHandler);
 	}
 
     @Override
     public void resize(int width, int height) {
+        renderer.resize(width, height);
     }
 
 	@Override
@@ -30,5 +32,6 @@ public class Interplanar extends ApplicationAdapter {
 
     @Override
     public void dispose() {
+        renderer.dispose();
     }
 }
