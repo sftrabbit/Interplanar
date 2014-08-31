@@ -11,16 +11,16 @@ import com.badlogic.gdx.utils.Disposable;
 
 public class SceneRenderer implements Renderer {
 
-    private int screenWidth = 0;
-    private int screenHeight = 0;
+    private int width = 0;
+    private int height = 0;
 
     public SceneRenderer() {
     }
 
     @Override
-    public void resize(int screenWidth, int screenHeight) {
-        this.screenWidth = screenWidth;
-        this.screenHeight = screenHeight;
+    public void resize(int width, int height) {
+        this.width = width;
+        this.height = height;
     }
 
     @Override

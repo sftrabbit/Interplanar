@@ -6,16 +6,17 @@ import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.FrameBuffer;
-import com.badlogic.gdx.utils.Disposable;
 
 public class PixelatedRenderer implements Renderer {
+
+    private static final int SCALE = 4;
 
     private SceneRenderer renderer = null;
     private FrameBuffer renderBuffer = null;
     private SpriteBatch pixelationBatch = null;
 
-    private int screenWidth = 0;
-    private int screenHeight = 0;
+    private int width = 0;
+    private int height = 0;
 
     public PixelatedRenderer(SceneRenderer renderer) {
         this.renderer = renderer;
@@ -23,15 +24,15 @@ public class PixelatedRenderer implements Renderer {
     }
 
     @Override
-    public void resize(int screenWidth, int screenHeight) {
-        this.screenWidth = screenWidth;
-        this.screenHeight = screenHeight;
+    public void resize(int width, int height) {
+        this.width = width;
+        this.height = height;
 
         Utils.dispose(renderBuffer);
-        renderBuffer = new FrameBuffer(Pixmap.Format.RGB888, screenWidth / 4, screenHeight / 4, true);
+        renderBuffer = new FrameBuffer(Pixmap.Format.RGB888, width / SCALE, height / SCALE, true);
         renderBuffer.getColorBufferTexture().setFilter(Texture.TextureFilter.Nearest, Texture.TextureFilter.Nearest);
 
-        renderer.resize(screenWidth, screenHeight);
+        renderer.resize(width / SCALE, height / SCALE);
     }
 
     @Override
@@ -44,7 +45,7 @@ public class PixelatedRenderer implements Renderer {
         renderBuffer.end();
 
         pixelationBatch.begin();
-        pixelationBatch.draw(renderBuffer.getColorBufferTexture(), 0, 0, screenWidth, screenHeight, 0, 0, 1, 1);
+        pixelationBatch.draw(renderBuffer.getColorBufferTexture(), 0, 0, width, height, 0, 0, 1, 1);
         pixelationBatch.end();
     }
 
