@@ -5,6 +5,7 @@ import com.badlogic.gdx.Graphics;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
 import uk.josephmansfield.interplanar.Interplanar;
+import uk.josephmansfield.interplanar.KeyboardInputProcessor;
 
 public class DesktopLauncher {
     private static final int MARGIN = 40;
@@ -35,6 +36,6 @@ public class DesktopLauncher {
             config.fullscreen = true;
         }
 
-		new LwjglApplication(new Interplanar(null), config);
+		new LwjglApplication(new Interplanar(new KeyboardInputProcessor()), config);
 	}
 }

@@ -8,10 +8,10 @@ import com.badlogic.gdx.InputProcessor;
 public class Interplanar extends ApplicationAdapter {
 
     private Engine entityEngine = new Engine();
-    private InputProcessor inputProcessor = null;
+    private PlatformerInputAdapter inputProcessor = null;
     private Renderer renderer = null;
 
-    public Interplanar(InputProcessor inputProcessor) {
+    public Interplanar(PlatformerInputAdapter inputProcessor) {
         this.inputProcessor = inputProcessor;
     }
 
