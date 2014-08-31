@@ -10,13 +10,17 @@ public class TouchInputProcessor extends PlatformerInputAdapter implements Inter
 
     @Override
     public boolean touchDown(int screenX, int screenY, int pointer, int button) {
-        inputState.jump = true;
+        if (screenX > screenWidth / 2) {
+            inputState.jump = true;
+        }
         return true;
     }
 
     @Override
     public boolean touchUp(int screenX, int screenY, int pointer, int button) {
-        inputState.jump = false;
+        if (screenX > screenWidth / 2) {
+            inputState.jump = false;
+        }
         return true;
     }
 
