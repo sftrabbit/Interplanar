@@ -3,8 +3,6 @@ package uk.josephmansfield.interplanar;
 import com.badlogic.ashley.core.Engine;
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.GL20;
-import com.badlogic.gdx.math.MathUtils;
 
 public class Interplanar extends ApplicationAdapter {
 
@@ -14,7 +12,7 @@ public class Interplanar extends ApplicationAdapter {
 
 	@Override
 	public void create() {
-        renderer = new Renderer();
+        renderer = new PixelatedRenderer(new SceneRenderer());
         Gdx.input.setInputProcessor(inputHandler);
 	}
 
