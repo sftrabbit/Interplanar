@@ -1,6 +1,5 @@
 package uk.josephmansfield.interplanar;
 
-import uk.josephmansfield.interplanar.InputState;
 import uk.josephmansfield.interplanar.PlatformerInputAdapter;
 
 public class TouchInputProcessor extends PlatformerInputAdapter {
