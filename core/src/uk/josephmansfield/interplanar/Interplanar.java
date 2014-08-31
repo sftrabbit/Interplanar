@@ -1,14 +1,19 @@
 package uk.josephmansfield.interplanar;
 
+import com.badlogic.ashley.core.Engine;
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
-import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 public class Interplanar extends ApplicationAdapter {
+
+    private Engine entityEngine = new Engine();
+    private Renderer renderer = new Renderer();
+    private InputHandler inputHandler = new InputHandler();
+
 	@Override
 	public void create() {
+        Gdx.input.setInputProcessor(inputHandler);
 	}
 
     @Override
@@ -17,8 +22,7 @@ public class Interplanar extends ApplicationAdapter {
 
 	@Override
 	public void render() {
-		Gdx.gl.glClearColor(1, 0, 0, 1);
-		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+        renderer.render();
 	}
 
     @Override
