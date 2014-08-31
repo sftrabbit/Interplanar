@@ -10,6 +10,7 @@ public class Interplanar extends ApplicationAdapter {
     private Engine entityEngine = new Engine();
     private PlatformerInputAdapter inputProcessor = null;
     private Renderer renderer = null;
+    private ResizeListener resizeListener = null;
 
     public Interplanar(PlatformerInputAdapter inputProcessor) {
         this.inputProcessor = inputProcessor;
@@ -24,9 +25,11 @@ public class Interplanar extends ApplicationAdapter {
     @Override
     public void resize(int width, int height) {
         renderer.resize(width, height);
+
+        notifyResizeListener(width, height);
     }
 
-	@Override
+    @Override
 	public void render() {
         float deltaTime = Math.min(Gdx.graphics.getDeltaTime(), 1/60f);
         entityEngine.update(deltaTime);
@@ -36,5 +39,19 @@ public class Interplanar extends ApplicationAdapter {
     @Override
     public void dispose() {
         renderer.dispose();
+    }
+
+    public void setResizeListener(ResizeListener resizeListener) {
+        this.resizeListener = resizeListener;
+    }
+
+    private void notifyResizeListener(int width, int height) {
+        if (resizeListener != null) {
+            resizeListener.onResize(width, height);
+        }
+    }
+
+    public static interface ResizeListener {
+        public void onResize(int width, int height);
     }
 }

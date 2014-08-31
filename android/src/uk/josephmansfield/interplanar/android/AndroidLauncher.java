@@ -17,6 +17,9 @@ public class AndroidLauncher extends AndroidApplication {
         config.useAccelerometer = false;
         config.hideStatusBar = true;
 
-		initialize(new Interplanar(new TouchInputProcessor()), config);
+        TouchInputProcessor touchInputProcessor = new TouchInputProcessor();
+        Interplanar interplanar = new Interplanar(touchInputProcessor);
+        interplanar.setResizeListener(touchInputProcessor);
+		initialize(interplanar, config);
 	}
 }
