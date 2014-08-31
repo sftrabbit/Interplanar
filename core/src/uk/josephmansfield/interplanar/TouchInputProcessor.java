@@ -1,8 +1,5 @@
 package uk.josephmansfield.interplanar;
 
-import com.badlogic.gdx.Gdx;
-import uk.josephmansfield.interplanar.PlatformerInputAdapter;
-
 public class TouchInputProcessor extends PlatformerInputAdapter implements Interplanar.ResizeListener {
     private InputState inputState = new InputState();
     private int screenWidth = 0;
