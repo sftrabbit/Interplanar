@@ -6,54 +6,54 @@ import com.badlogic.gdx.Gdx;
 
 public class Interplanar extends ApplicationAdapter {
 
-    private Engine entityEngine = new Engine();
-    private PlatformerInputAdapter inputProcessor = null;
-    private Renderer renderer = null;
-    private ResizeListener resizeListener = null;
+	private Engine entityEngine = new Engine();
+	private PlatformerInputAdapter inputProcessor = null;
+	private Renderer renderer = null;
+	private ResizeListener resizeListener = null;
 
-    private PlatformerInputAdapter.InputState.MovementDirection movementDirection = PlatformerInputAdapter.InputState.MovementDirection.MOVEMENT_NONE;
-    private boolean jumping = false;
+	private PlatformerInputAdapter.InputState.MovementDirection movementDirection = PlatformerInputAdapter.InputState.MovementDirection.MOVEMENT_NONE;
+	private boolean jumping = false;
 
-    public Interplanar(PlatformerInputAdapter inputProcessor) {
-        this.inputProcessor = inputProcessor;
-    }
+	public Interplanar(PlatformerInputAdapter inputProcessor) {
+		this.inputProcessor = inputProcessor;
+	}
 
 	@Override
 	public void create() {
-        renderer = new PixelatedRenderer(new SceneRenderer());
-        Gdx.input.setInputProcessor(inputProcessor);
+		renderer = new PixelatedRenderer(new SceneRenderer());
+		Gdx.input.setInputProcessor(inputProcessor);
 	}
 
-    @Override
-    public void resize(int width, int height) {
-        renderer.resize(width, height);
+	@Override
+	public void resize(int width, int height) {
+		renderer.resize(width, height);
 
-        notifyResizeListener(width, height);
-    }
+		notifyResizeListener(width, height);
+	}
 
-    @Override
+	@Override
 	public void render() {
-        float deltaTime = Math.min(Gdx.graphics.getDeltaTime(), 1/60f);
-        entityEngine.update(deltaTime);
-        renderer.render();
+		float deltaTime = Math.min(Gdx.graphics.getDeltaTime(), 1 / 60f);
+		entityEngine.update(deltaTime);
+		renderer.render();
 	}
 
-    @Override
-    public void dispose() {
-        renderer.dispose();
-    }
+	@Override
+	public void dispose() {
+		renderer.dispose();
+	}
 
-    public void setResizeListener(ResizeListener resizeListener) {
-        this.resizeListener = resizeListener;
-    }
+	public void setResizeListener(ResizeListener resizeListener) {
+		this.resizeListener = resizeListener;
+	}
 
-    private void notifyResizeListener(int width, int height) {
-        if (resizeListener != null) {
-            resizeListener.onResize(width, height);
-        }
-    }
+	private void notifyResizeListener(int width, int height) {
+		if (resizeListener != null) {
+			resizeListener.onResize(width, height);
+		}
+	}
 
-    public static interface ResizeListener {
-        public void onResize(int width, int height);
-    }
+	public static interface ResizeListener {
+		public void onResize(int width, int height);
+	}
 }
