@@ -14,7 +14,7 @@ public class AndroidLauncher extends AndroidApplication {
 
         config.useCompass = false;
         config.useAccelerometer = false;
-        config.hideStatusBar = true;
+        config.useImmersiveMode = true;
 
         TouchInputProcessor touchInputProcessor = new TouchInputProcessor();
         Interplanar interplanar = new Interplanar(touchInputProcessor);
