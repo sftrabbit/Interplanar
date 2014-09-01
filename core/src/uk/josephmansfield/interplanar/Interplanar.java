@@ -11,6 +11,9 @@ public class Interplanar extends ApplicationAdapter {
     private Renderer renderer = null;
     private ResizeListener resizeListener = null;
 
+    private PlatformerInputAdapter.InputState.MovementDirection movementDirection = PlatformerInputAdapter.InputState.MovementDirection.MOVEMENT_NONE;
+    private boolean jumping = false;
+
     public Interplanar(PlatformerInputAdapter inputProcessor) {
         this.inputProcessor = inputProcessor;
     }

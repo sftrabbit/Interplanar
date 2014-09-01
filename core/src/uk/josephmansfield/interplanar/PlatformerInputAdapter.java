@@ -3,6 +3,8 @@ package uk.josephmansfield.interplanar;
 import com.badlogic.gdx.InputAdapter;
 
 public abstract class PlatformerInputAdapter extends InputAdapter {
+    protected InputState inputState = new InputState();
+
     public abstract InputState getInputState();
 
     public static class InputState {
@@ -12,7 +14,7 @@ public abstract class PlatformerInputAdapter extends InputAdapter {
             MOVEMENT_RIGHT
         }
 
-        public MovementDirection movementDirection = MovementDirection.MOVEMENT_NONE;
-        public boolean jump = false;
+        public MovementDirection requestedMovement = MovementDirection.MOVEMENT_NONE;
+        public boolean jumpRequested = false;
     }
 }
