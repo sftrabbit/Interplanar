@@ -5,15 +5,15 @@ import uk.josephmansfield.interplanar.Interplanar;
 public class TouchInputProcessor extends PlatformerInputProcessor implements Interplanar.ResizeListener {
 	private static final int STOP_ZONE_SIZE = 20;
 
-	private int screenWidth = 0;
-	private int screenHeight = 0;
+	private int screenWidth;
+	private int screenHeight;
 
-	private boolean jumpTouched = false;
-	private int jumpPointer = 0;
+	private boolean jumpTouched;
+	private int jumpPointer;
 
-	private boolean moveTouched = false;
-	private int movePointer = 0;
-	private int moveOriginX = 0;
+	private boolean moveTouched;
+	private int movePointer;
+	private int moveOriginX;
 
 	@Override
 	public boolean touchDown(int screenX, int screenY, int pointer, int button) {

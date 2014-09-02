@@ -4,9 +4,9 @@ import com.badlogic.gdx.Input;
 
 public class KeyboardInputProcessor extends PlatformerInputProcessor {
 
-	private boolean leftPressed = false;
-	private boolean rightPressed = false;
-	private boolean lastPressedLeft = false;
+	private boolean leftPressed;
+	private boolean rightPressed;
+	private boolean lastPressedLeft;
 
 	@Override
 	public boolean keyDown(int keycode) {

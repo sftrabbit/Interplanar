@@ -14,13 +14,13 @@ public class SceneRenderer implements Renderer {
 
 	private Camera camera = new OrthographicCamera();
 	private ShapeRenderer shapeRenderer = new ShapeRenderer();
-	private Viewport viewport = null;
+	private Viewport viewport;
 
-	private World physicsWorld = null;
-	private Box2DDebugRenderer physicsRenderer = null;
+	private World physicsWorld;
+	private Box2DDebugRenderer physicsRenderer;
 
-	private int width = 0;
-	private int height = 0;
+	private int width;
+	private int height;
 
 	public SceneRenderer(World physicsWorld) {
 		this.physicsWorld = physicsWorld;

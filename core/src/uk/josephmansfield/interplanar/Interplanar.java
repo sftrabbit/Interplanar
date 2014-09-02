@@ -14,12 +14,12 @@ import uk.josephmansfield.interplanar.input.PlatformerInputProcessor;
 
 public class Interplanar extends ApplicationAdapter {
 
-	private PlatformerInputProcessor inputProcessor = null;
-	private World physicsWorld = null;
-	private Engine entityEngine = null;
-	private Renderer renderer = null;
+	private PlatformerInputProcessor inputProcessor;
+	private World physicsWorld;
+	private Engine entityEngine;
+	private Renderer renderer;
 
-	private ResizeListener resizeListener = null;
+	private ResizeListener resizeListener;
 
 	public Interplanar(PlatformerInputProcessor inputProcessor) {
 		this.inputProcessor = inputProcessor;

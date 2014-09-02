@@ -5,7 +5,7 @@ import com.badlogic.gdx.physics.box2d.World;
 
 public class PhysicsSystem extends EntitySystem {
 
-	private World physicsWorld = null;
+	private World physicsWorld;
 
 	public PhysicsSystem(World physicsWorld) {
 		this.physicsWorld = physicsWorld;

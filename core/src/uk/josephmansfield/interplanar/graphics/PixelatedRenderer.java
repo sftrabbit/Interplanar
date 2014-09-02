@@ -12,12 +12,12 @@ public class PixelatedRenderer implements Renderer {
 
 	private static final int SCALE = 4;
 
-	private SceneRenderer renderer = null;
-	private FrameBuffer renderBuffer = null;
-	private SpriteBatch pixelationBatch = null;
+	private SceneRenderer renderer;
+	private FrameBuffer renderBuffer;
+	private SpriteBatch pixelationBatch;
 
-	private int width = 0;
-	private int height = 0;
+	private int width;
+	private int height;
 
 	public PixelatedRenderer(SceneRenderer renderer) {
 		this.renderer = renderer;
