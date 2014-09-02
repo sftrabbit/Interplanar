@@ -14,9 +14,9 @@ import uk.josephmansfield.interplanar.input.PlatformerInputProcessor;
 
 public class Interplanar extends ApplicationAdapter {
 
-	private Engine entityEngine = new Engine();
 	private PlatformerInputProcessor inputProcessor = null;
 	private World physicsWorld = null;
+	private Engine entityEngine = null;
 	private Renderer renderer = null;
 
 	private ResizeListener resizeListener = null;
@@ -31,11 +31,12 @@ public class Interplanar extends ApplicationAdapter {
 
 		physicsWorld = new World(new Vector2(0, -30), true);
 
-		SceneRenderer sceneRenderer = new SceneRenderer(physicsWorld);
-		renderer = new PixelatedRenderer(sceneRenderer);
-
+		entityEngine = new Engine();
 		entityEngine.addEntity(new CharacterEntity(physicsWorld));
 		entityEngine.addSystem(new PhysicsSystem(physicsWorld));
+
+		SceneRenderer sceneRenderer = new SceneRenderer(physicsWorld);
+		renderer = new PixelatedRenderer(sceneRenderer);
 	}
 
 	@Override
