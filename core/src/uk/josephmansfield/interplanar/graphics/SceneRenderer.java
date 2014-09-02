@@ -1,4 +1,4 @@
-package uk.josephmansfield.interplanar;
+package uk.josephmansfield.interplanar.graphics;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Camera;

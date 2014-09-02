@@ -1,4 +1,6 @@
-package uk.josephmansfield.interplanar;
+package uk.josephmansfield.interplanar.input;
+
+import uk.josephmansfield.interplanar.Interplanar;
 
 public class TouchInputProcessor extends PlatformerInputAdapter implements Interplanar.ResizeListener {
 	private static final int STOP_ZONE_SIZE = 20;

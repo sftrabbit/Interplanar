@@ -1,4 +1,4 @@
-package uk.josephmansfield.interplanar;
+package uk.josephmansfield.interplanar.input;
 
 public class KeyboardInputProcessor extends PlatformerInputAdapter {
 	private InputState inputState = new InputState();

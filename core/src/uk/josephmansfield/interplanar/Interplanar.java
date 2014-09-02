@@ -3,6 +3,10 @@ package uk.josephmansfield.interplanar;
 import com.badlogic.ashley.core.Engine;
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
+import uk.josephmansfield.interplanar.graphics.PixelatedRenderer;
+import uk.josephmansfield.interplanar.graphics.Renderer;
+import uk.josephmansfield.interplanar.graphics.SceneRenderer;
+import uk.josephmansfield.interplanar.input.PlatformerInputAdapter;
 
 public class Interplanar extends ApplicationAdapter {
 

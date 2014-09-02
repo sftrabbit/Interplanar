@@ -1,4 +1,4 @@
-package uk.josephmansfield.interplanar;
+package uk.josephmansfield.interplanar.input;
 
 import com.badlogic.gdx.InputAdapter;
 

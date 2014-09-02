@@ -1,4 +1,4 @@
-package uk.josephmansfield.interplanar;
+package uk.josephmansfield.interplanar.graphics;
 
 
 import com.badlogic.gdx.utils.Disposable;

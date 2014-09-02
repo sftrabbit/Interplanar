@@ -4,7 +4,7 @@ import com.badlogic.gdx.Graphics;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
 import uk.josephmansfield.interplanar.Interplanar;
-import uk.josephmansfield.interplanar.KeyboardInputProcessor;
+import uk.josephmansfield.interplanar.input.KeyboardInputProcessor;
 
 public class DesktopLauncher {
 	private static final int MARGIN = 40;
