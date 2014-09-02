@@ -2,7 +2,7 @@ package uk.josephmansfield.interplanar.input;
 
 import com.badlogic.gdx.InputAdapter;
 
-public abstract class PlatformerInputAdapter extends InputAdapter {
+public abstract class PlatformerInputProcessor extends InputAdapter {
 	protected InputState inputState = new InputState();
 
 	public abstract InputState getInputState();
@@ -14,7 +14,7 @@ public abstract class PlatformerInputAdapter extends InputAdapter {
 			MOVEMENT_RIGHT
 		}
 
-		public MovementDirection requestedMovement = MovementDirection.MOVEMENT_NONE;
-		public boolean jumpRequested = false;
+		public MovementDirection movement = MovementDirection.MOVEMENT_NONE;
+		public boolean jump = false;
 	}
 }

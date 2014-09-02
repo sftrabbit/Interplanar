@@ -6,19 +6,19 @@ import com.badlogic.gdx.Gdx;
 import uk.josephmansfield.interplanar.graphics.PixelatedRenderer;
 import uk.josephmansfield.interplanar.graphics.Renderer;
 import uk.josephmansfield.interplanar.graphics.SceneRenderer;
-import uk.josephmansfield.interplanar.input.PlatformerInputAdapter;
+import uk.josephmansfield.interplanar.input.PlatformerInputProcessor;
 
 public class Interplanar extends ApplicationAdapter {
 
 	private Engine entityEngine = new Engine();
-	private PlatformerInputAdapter inputProcessor = null;
+	private PlatformerInputProcessor inputProcessor = null;
 	private Renderer renderer = null;
 	private ResizeListener resizeListener = null;
 
-	private PlatformerInputAdapter.InputState.MovementDirection movementDirection = PlatformerInputAdapter.InputState.MovementDirection.MOVEMENT_NONE;
+	private PlatformerInputProcessor.InputState.MovementDirection movementDirection = PlatformerInputProcessor.InputState.MovementDirection.MOVEMENT_NONE;
 	private boolean jumping = false;
 
-	public Interplanar(PlatformerInputAdapter inputProcessor) {
+	public Interplanar(PlatformerInputProcessor inputProcessor) {
 		this.inputProcessor = inputProcessor;
 	}
 

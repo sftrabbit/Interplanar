@@ -2,7 +2,7 @@ package uk.josephmansfield.interplanar.input;
 
 import uk.josephmansfield.interplanar.Interplanar;
 
-public class TouchInputProcessor extends PlatformerInputAdapter implements Interplanar.ResizeListener {
+public class TouchInputProcessor extends PlatformerInputProcessor implements Interplanar.ResizeListener {
 	private static final int STOP_ZONE_SIZE = 20;
 
 	private int screenWidth = 0;
@@ -21,13 +21,13 @@ public class TouchInputProcessor extends PlatformerInputAdapter implements Inter
 			jumpTouched = true;
 			jumpPointer = pointer;
 
-			inputState.jumpRequested = true;
+			inputState.jump = true;
 		} else if (!moveTouched && screenX <= screenWidth) {
 			moveTouched = true;
 			movePointer = pointer;
 			moveOriginX = screenX;
 
-			inputState.requestedMovement = InputState.MovementDirection.MOVEMENT_NONE;
+			inputState.movement = InputState.MovementDirection.MOVEMENT_NONE;
 		}
 
 		return true;
@@ -38,11 +38,11 @@ public class TouchInputProcessor extends PlatformerInputAdapter implements Inter
 		if (jumpTouched && pointer == jumpPointer) {
 			jumpTouched = false;
 
-			inputState.jumpRequested = false;
+			inputState.jump = false;
 		} else if (moveTouched && pointer == movePointer) {
 			moveTouched = false;
 
-			inputState.requestedMovement = InputState.MovementDirection.MOVEMENT_NONE;
+			inputState.movement = InputState.MovementDirection.MOVEMENT_NONE;
 		}
 		return true;
 	}
@@ -51,11 +51,11 @@ public class TouchInputProcessor extends PlatformerInputAdapter implements Inter
 	public boolean touchDragged(int screenX, int screenY, int pointer) {
 		if (moveTouched && pointer == movePointer) {
 			if (screenX > moveOriginX + STOP_ZONE_SIZE) {
-				inputState.requestedMovement = InputState.MovementDirection.MOVEMENT_RIGHT;
+				inputState.movement = InputState.MovementDirection.MOVEMENT_RIGHT;
 			} else if (screenX < moveOriginX - STOP_ZONE_SIZE) {
-				inputState.requestedMovement = InputState.MovementDirection.MOVEMENT_LEFT;
+				inputState.movement = InputState.MovementDirection.MOVEMENT_LEFT;
 			} else {
-				inputState.requestedMovement = InputState.MovementDirection.MOVEMENT_NONE;
+				inputState.movement = InputState.MovementDirection.MOVEMENT_NONE;
 			}
 		}
 		return true;
