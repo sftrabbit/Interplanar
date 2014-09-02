@@ -5,6 +5,8 @@ import com.badlogic.gdx.graphics.Camera;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
+import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
+import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 
@@ -14,10 +16,16 @@ public class SceneRenderer implements Renderer {
 	private ShapeRenderer shapeRenderer = new ShapeRenderer();
 	private Viewport viewport = null;
 
+	private World physicsWorld = null;
+	private Box2DDebugRenderer physicsRenderer = null;
+
 	private int width = 0;
 	private int height = 0;
 
-	public SceneRenderer() {
+	public SceneRenderer(World physicsWorld) {
+		this.physicsWorld = physicsWorld;
+
+		this.physicsRenderer = new Box2DDebugRenderer();
 	}
 
 	@Override
@@ -41,9 +49,12 @@ public class SceneRenderer implements Renderer {
 		shapeRenderer.setProjectionMatrix(camera.combined);
 		shapeRenderer.line(0, 0, 5f, 5f);
 		shapeRenderer.end();
+
+		physicsRenderer.render(physicsWorld, camera.combined);
 	}
 
 	@Override
 	public void dispose() {
+		physicsRenderer.dispose();
 	}
 }
