@@ -20,6 +20,8 @@ public class DesktopLauncher {
 	public static void main(String[] arg) {
 		LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
 
+		config.resizable = false;
+
 		Graphics.DisplayMode currentDisplayMode = LwjglApplicationConfiguration.getDesktopDisplayMode();
 
 		if (currentDisplayMode.width > LARGE_BREAKPOINT_WIDTH && currentDisplayMode.height > LARGE_BREAKPOINT_HEIGHT) {
