@@ -37,6 +37,9 @@ public class Interplanar extends ApplicationAdapter {
 
 		SceneRenderer sceneRenderer = new SceneRenderer(physicsWorld);
 		renderer = new PixelatedRenderer(sceneRenderer);
+
+		Level level = Level.fromMapPath("levels/level0.tmx");
+		level.populatePhysicsWorld(physicsWorld);
 	}
 
 	@Override

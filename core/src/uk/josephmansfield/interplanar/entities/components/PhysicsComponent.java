@@ -14,7 +14,7 @@ public class PhysicsComponent extends Component {
 		Body body = physicsWorld.createBody(bodyDef);
 
 		PolygonShape square = new PolygonShape();
-		square.setAsBox(5f, 5f);
+		square.setAsBox(8f, 8f);
 
 		FixtureDef fixtureDef = new FixtureDef();
 		fixtureDef.shape = square;

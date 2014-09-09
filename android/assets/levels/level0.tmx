@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="10" height="6" tilewidth="16" tileheight="16">
+ <objectgroup name="Collision" width="10" height="6">
+  <object x="0" y="80" width="160" height="16"/>
+  <object x="0" y="0" width="16" height="80"/>
+  <object x="144" y="0" width="16" height="80"/>
+  <object x="16" y="0" width="128" height="16"/>
+ </objectgroup>
+</map>
