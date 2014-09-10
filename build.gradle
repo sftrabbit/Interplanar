@@ -62,7 +62,7 @@ project(":android") {
         compile "com.badlogicgames.gdx:gdx-controllers:$gdxVersion"
         compile "com.badlogicgames.gdx:gdx-controllers-android:$gdxVersion"
         compile "com.badlogicgames.box2dlights:box2dlights:1.2"
-        compile "com.badlogicgames.ashley:ashley:1.0.1"
+        compile "com.badlogicgames.ashley:ashley:1.1.0"
     }
 }
 
@@ -98,7 +98,7 @@ project(":html") {
         compile "com.badlogicgames.gdx:gdx-controllers-gwt:$gdxVersion"
         compile "com.badlogicgames.gdx:gdx-controllers-gwt:$gdxVersion:sources"
         compile "com.badlogicgames.box2dlights:box2dlights:1.2:sources"
-        compile "com.badlogicgames.ashley:ashley:1.0.1:sources"
+        compile "com.badlogicgames.ashley:ashley:1.1.0:sources"
     }
 }
 
@@ -111,7 +111,7 @@ project(":core") {
         compile "com.badlogicgames.gdx:gdx-box2d:$gdxVersion"
         compile "com.badlogicgames.gdx:gdx-controllers:$gdxVersion"
         compile "com.badlogicgames.box2dlights:box2dlights:1.2"
-        compile "com.badlogicgames.ashley:ashley:1.0.1"
+        compile "com.badlogicgames.ashley:ashley:1.1.0"
     }
 }
 

@@ -18,6 +18,8 @@ public class KeyboardInputProcessor extends PlatformerInputProcessor {
 		} else if (keycode == Input.Keys.D) {
 			rightPressed = true;
 			lastPressedLeft = false;
+		} else if (keycode == Input.Keys.F5) {
+			inputState.debug = true;
 		}
 
 		setMovementRequested();
@@ -33,6 +35,8 @@ public class KeyboardInputProcessor extends PlatformerInputProcessor {
 			leftPressed = false;
 		} else if (keycode == Input.Keys.D) {
 			rightPressed = false;
+		} else if (keycode == Input.Keys.F5) {
+			inputState.debug = false;
 		}
 
 		setMovementRequested();

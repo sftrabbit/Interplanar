@@ -16,5 +16,6 @@ public abstract class PlatformerInputProcessor extends InputAdapter {
 
 		public MovementDirection movement = MovementDirection.MOVEMENT_NONE;
 		public boolean jump = false;
+		public boolean debug = false;
 	}
 }

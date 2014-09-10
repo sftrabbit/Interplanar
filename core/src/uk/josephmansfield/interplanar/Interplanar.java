@@ -6,6 +6,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.World;
 import uk.josephmansfield.interplanar.entities.CharacterEntity;
+import uk.josephmansfield.interplanar.entities.systems.InputSystem;
 import uk.josephmansfield.interplanar.entities.systems.PhysicsSystem;
 import uk.josephmansfield.interplanar.graphics.PixelatedRenderer;
 import uk.josephmansfield.interplanar.graphics.Renderer;
@@ -34,6 +35,7 @@ public class Interplanar extends ApplicationAdapter {
 		entityEngine = new Engine();
 		entityEngine.addEntity(new CharacterEntity(physicsWorld));
 		entityEngine.addSystem(new PhysicsSystem(physicsWorld));
+		entityEngine.addSystem(new InputSystem(inputProcessor));
 
 		SceneRenderer sceneRenderer = new SceneRenderer(physicsWorld);
 		renderer = new PixelatedRenderer(sceneRenderer);
