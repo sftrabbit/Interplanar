@@ -5,12 +5,14 @@ import com.badlogic.gdx.physics.box2d.*;
 
 public class PhysicsComponent extends Component {
 
-	public PhysicsComponent(World physicsWorld) {
+	public PhysicsComponent() {
+	}
+
+	public void addToPhysicsWorld(World physicsWorld) {
 		BodyDef bodyDef = new BodyDef();
 		bodyDef.type = BodyDef.BodyType.DynamicBody;
 		bodyDef.position.set(0f, 0f);
 
-		World world;
 		Body body = physicsWorld.createBody(bodyDef);
 
 		PolygonShape square = new PolygonShape();
